@@ -45,7 +45,7 @@ set fo-=t                      " Do no auto-wrap text using textwidth (does not 
 set nowrap
 set textwidth=0                " Don't wrap lines by default
 
-set tabstop=4                  " tab size eql 4 spaces
+set tabstop=4                  " tab size eql 2 spaces
 set softtabstop=4
 set shiftwidth=4               " default shift width for indents
 set expandtab                  " replace tabs with ${tabstop} spaces
@@ -230,7 +230,7 @@ au BufWinEnter *.txt if &ft == 'help' | wincmd H | nmap q :q<CR> | endif
 " Scripts and Plugins " {{{
 filetype off
 runtime macros/matchit.vim
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle.vim
 call vundle#rc()
 
 Plugin 'gmarik/vundle' " let Vundle manage Vundle
@@ -245,6 +245,8 @@ endif
 " Programming
 " python autocompletion
 Plugin 'davidhalter/jedi-vim'
+" golang syntax highlights
+Plugin 'fatih/vim-go'
 "
 
 " Snippets

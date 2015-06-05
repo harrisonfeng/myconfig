@@ -1,10 +1,9 @@
 #!/bin/bash
+# This script is used to config super vim 
 
-
-VUNDLE_VIM_DIR=${HOME}/.vim/bundle/Vundle.vim
+VUNDLE_VIM_DIR=${HOME}/.vim/bundle/vundle.vim
 
 mkdir -p ${HOME}/.vim/bundle
-
 cp vimrc ${HOME}/.vimrc
 
 if [ -d ${VUNDLE_VIM_DIR} ]; then
@@ -13,7 +12,7 @@ if [ -d ${VUNDLE_VIM_DIR} ]; then
     cd ${HOME}
 else
     cd ${HOME}
-    git clone  https://github.com/gmarik/vundle.git  ${HOME}/.vim/bundle/Vundle.vim
+    git clone  https://github.com/gmarik/vundle.git  ${HOME}/.vim/bundle/vundle.vim
 fi
 
 vim +PluginInstall +qall
