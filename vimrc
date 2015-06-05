@@ -1,3 +1,6 @@
+" ~/.vimrc
+" This vimrc is based on https://github.com/gmarik/vimfiles/blob/master/vimrc
+"
 " General "{{{
 set nocompatible               " be iMproved
 
