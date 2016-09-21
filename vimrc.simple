@@ -23,16 +23,17 @@ set hlsearch
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle.git'
+" Let Vundle manages Vundle, rquired
+Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'davidhalter/jedi-vim.git'
 Plugin 'tpope/vim-fugitive.git'
 
 " Golang support
 Plugin 'fatih/vim-go'
-
 
 " Neocomplete
 Plugin 'Shougo/neocomplete.vim'

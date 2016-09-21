@@ -233,19 +233,23 @@ au BufWinEnter *.txt if &ft == 'help' | wincmd H | nmap q :q<CR> | endif
 " Scripts and Plugins " {{{
 filetype off
 runtime macros/matchit.vim
-set rtp+=~/.vim/bundle/vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
-Plugin 'gmarik/vundle' " let Vundle manage Vundle
+" let Vundle manages Vundle
+Plugin 'VundleVim/vundle'
 
 " Colorscheme
 Plugin 'gmarik/ingretu'
+
 
 if has("gui_running")
   colorscheme ingretu
 endif
 
-" Programming
+
+" ********************** Programming ********************************
+
 " python autocompletion
 Plugin 'davidhalter/jedi-vim'
 " golang syntax highlights
