@@ -36,12 +36,12 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'fatih/vim-go'
 
 " Neocomplete
-Plugin 'Shougo/neocomplete.vim'
-let g:acp_enableAtStartup = 1
-let g:neocomplete#enable_at_startup = 1
+" Plugin 'Shougo/neocomplete.vim'
+" let g:acp_enableAtStartup = 1
+" let g:neocomplete#enable_at_startup = 1
 
 " Super tab
-Plugin 'ervandew/supertab.git'
+" Plugin 'ervandew/supertab.git'
 
 " Comments
 Plugin 'tomtom/tcomment_vim'
@@ -51,7 +51,30 @@ Plugin 'tomtom/tcomment_vim'
 "           tagbar plugin
 " Ubuntu - sudo apt-get install exuberant-ctags
 Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
 
+" vim airline -
+Plugin 'vim-airline/vim-airline'
+set laststatus=2
+
+" vim airline themes
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='light'
+
+" tab line
+Plugin 'mkitt/tabline.vim'
+
+" easy grep
+Plugin 'vim-scripts/EasyGrep'
+
+
+" NERDTree and tabs together
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+nmap <F9> :NERDTreeTabsToggle<CR>
+
+" you complete me
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype indent plugin on
@@ -67,8 +90,8 @@ set showmatch
 set matchtime=2
 
 set showcmd
-
-
+" Enable 256 colors in vim
+set t_Co=256
 
 "---------
 " fold
