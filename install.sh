@@ -16,9 +16,9 @@ function command_exists() {
 function install_dependencies() {
     if command_exists yum; then
         yum groupinstall -y "Development Tools"
-        yum install -y kernel-devel cmake python-devel
+        yum install -y kernel-devel cmake python-devel tmux
     elif command_exists apt; then
-        sudo apt-get install -y build-essential cmake python-dev
+        sudo apt-get install -y build-essential cmake python-dev tmux
     else
         echo "Sorry, I can support both Ubuntu and CentOS only."
         exit 111

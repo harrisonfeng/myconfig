@@ -67,20 +67,26 @@ Plugin 'mkitt/tabline.vim'
 " easy grep
 Plugin 'vim-scripts/EasyGrep'
 
-
 " NERDTree and tabs together
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 nmap <F9> :NERDTreeTabsToggle<CR>
+" let g:nerdtree_tabs_open_on_console_startup=1
 
 " you complete me
 Plugin 'Valloric/YouCompleteMe'
+
+" syntax checking hacks for vim
+Plugin 'vim-syntastic/syntastic'
+
 
 call vundle#end()
 filetype indent plugin on
 
 " }}}
 " -----------------------------------------------
+
+
 
 
 " -----------------------------------------------
