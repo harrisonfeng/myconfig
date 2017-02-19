@@ -67,6 +67,7 @@ Plugin 'mkitt/tabline.vim'
 " easy grep
 Plugin 'vim-scripts/EasyGrep'
 
+
 " NERDTree and tabs together
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -79,14 +80,25 @@ Plugin 'Valloric/YouCompleteMe'
 " syntax checking hacks for vim
 Plugin 'vim-syntastic/syntastic'
 
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<F7>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 call vundle#end()
 filetype indent plugin on
 
 " }}}
 " -----------------------------------------------
-
-
 
 
 " -----------------------------------------------
@@ -133,3 +145,8 @@ set copyindent
 
 
 set cursorline
+set list listchars=tab:→\ ,trail:·                   " Display whitespace and tab
+set hlsearch incsearch smartcase ignorecase          " Search enhancement, case non-sensitive
+
+autocmd FileType go,c,java,sh set ts=4 sw=4 sts=4 et
+autocmd BufNewFile,BufRead *.json set filetype=javascript
