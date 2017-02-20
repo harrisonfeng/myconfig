@@ -77,10 +77,10 @@ function install_dependencies() {
     # For CentOS
     if command_exists yum; then
         yum groupinstall -y "Development Tools"
-        yum install -y kernel-devel cmake python-devel tmux
+        yum install -y kernel-devel cmake python-devel tmux ctags
     # For Ubuntu
     elif command_exists apt; then
-        sudo apt-get install -y build-essential cmake python-dev tmux
+        sudo apt-get install -y build-essential cmake python-dev tmux exuberant-ctags
     # For ${OS_CYGWIN}
     elif [ "${OS_TYPE}" == "${OS_CYGWIN}" ]; then
         echo -e "${TXTGREEN}
