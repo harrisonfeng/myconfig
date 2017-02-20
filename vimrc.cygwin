@@ -1,0 +1,152 @@
+"
+" This is Personal Vim config file for Harrison Feng
+" @author Harrison Feng <feng.harrison@gmail.com>
+
+"
+" -----------------------------------------------
+" General " {{{
+" Encoding for displaying Chinese chars
+set fileencodings=utf-8,gb2312,gbk,gbk18030,ucs-bom,cp936
+set termencoding=utf-8
+set fileformats=unix
+set encoding=utf-8
+
+set noswapfile
+set hlsearch
+
+" }}}
+" -----------------------------------------------
+
+" -----------------------------------------------
+" Plugins managed by vundle  " {{{
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manages Vundle, rquired
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'davidhalter/jedi-vim.git'
+Plugin 'tpope/vim-fugitive.git'
+
+" Golang support
+Plugin 'fatih/vim-go'
+
+" Neocomplete
+Plugin 'Shougo/neocomplete.vim'
+let g:acp_enableAtStartup = 1
+let g:neocomplete#enable_at_startup = 1
+
+" Super tab
+Plugin 'ervandew/supertab.git'
+
+" Comments
+Plugin 'tomtom/tcomment_vim'
+
+" tag bar - tagbar depends on exuberant ctags
+"           please install it before enable 
+"           tagbar plugin
+" Ubuntu - sudo apt-get install exuberant-ctags
+Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+
+" vim airline -
+Plugin 'vim-airline/vim-airline'
+set laststatus=2
+
+" vim airline themes
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='light'
+
+" tab line
+Plugin 'mkitt/tabline.vim'
+
+" easy grep
+Plugin 'vim-scripts/EasyGrep'
+
+
+" NERDTree and tabs together
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+nmap <F9> :NERDTreeTabsToggle<CR>
+" let g:nerdtree_tabs_open_on_console_startup=1
+
+" you complete me
+" Plugin 'Valloric/YouCompleteMe'
+
+" syntax checking hacks for vim
+Plugin 'vim-syntastic/syntastic'
+
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<F7>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+call vundle#end()
+filetype indent plugin on
+
+" }}}
+" -----------------------------------------------
+
+
+" -----------------------------------------------
+" Visual " {{{
+syntax on
+set showmatch
+set matchtime=2
+
+set showcmd
+" Enable 256 colors in vim
+set t_Co=256
+
+"---------
+" fold
+"--------
+set foldmethod=indent
+set foldlevel=0
+
+"---------------
+" Generic
+" ---------------
+set nu
+
+"---------------------
+" Formatting " {{{
+set showmode             " Always shows what mode we're currently editing in.
+set nowrap               " Don't wrap lines by default
+
+set tabstop=4            " tab size eqls 2 spaces
+set softtabstop=4        " When hitting <BS>, pretend like a tab is moved, even if spaces.
+set shiftwidth=4         " Number of spaces to use for autoindenting.
+set expandtab
+set shiftround
+set backspace=indent,eol,start
+set showmatch
+set ignorecase
+set smartcase
+
+set autoindent
+set cindent
+set indentkeys-=0#       " Do not break indent on #
+set cinkeys-=0#
+set copyindent
+
+
+set cursorline
+set list listchars=tab:→\ ,trail:·                   " Display whitespace and tab
+set hlsearch incsearch smartcase ignorecase          " Search enhancement, case non-sensitive
+
+autocmd FileType go,c,java,sh set ts=4 sw=4 sts=4 et
+autocmd BufNewFile,BufRead *.json set filetype=javascript
