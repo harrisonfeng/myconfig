@@ -29,7 +29,6 @@ call vundle#begin()
 " Let Vundle manages Vundle, rquired
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'davidhalter/jedi-vim.git'
 Plugin 'tpope/vim-fugitive.git'
 
 " Golang support
