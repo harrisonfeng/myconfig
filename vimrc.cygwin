@@ -91,7 +91,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 " vim airline themes
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='powerlineish'
+let g:airline_theme='solarized'
 
 " tab line
 Plugin 'mkitt/tabline.vim'
