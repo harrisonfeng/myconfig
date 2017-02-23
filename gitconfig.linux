@@ -1,0 +1,11 @@
+[user]
+	name = Harrison Feng
+	email = feng.harrison@gmail.com
+[alias]
+	elog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	showbranch = auto
