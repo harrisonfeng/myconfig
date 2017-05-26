@@ -32,7 +32,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive.git'
 
 " Golang support
-Plugin 'fatih/vim-go'
+Plugin 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
 " Neocomplete
 " Plugin 'Shougo/neocomplete.vim'
@@ -91,7 +91,7 @@ let g:airline_symbols.branch = ''
 
 " vim airline themes
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='solarized'
+let g:airline_theme='powerlineish'
 
 " tab line
 Plugin 'mkitt/tabline.vim'
@@ -136,6 +136,7 @@ filetype indent plugin on
 " -----------------------------------------------
 " Visual " {{{
 syntax on
+colorscheme  koehler
 set showmatch
 set matchtime=2
 
