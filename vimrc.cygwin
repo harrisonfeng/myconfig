@@ -126,6 +126,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+Plugin 'davidhalter/jedi-vim'
+
 call vundle#end()
 filetype indent plugin on
 
