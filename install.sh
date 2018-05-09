@@ -147,12 +147,24 @@ function install_ycm {
 }
 
 
+function install_git_prompt {
+
+    if [ ! -f $HOME/.git-prompt.sh ]; then
+        cp ./git-prompt.sh $HOME/.git-prompt.sh
+        echo -e "\n" >> $HOME/.bashrc
+        tail -n 1 ./bashrc >> $HOME/.bashrc
+        echo -e "source ~/.git-prompt.sh" >> $HOME/.bashrc
+    fi
+}
+
+
 function main() {
     check_env
     create_vimrc
     install_dependencies
     install_update_plugins
     install_ycm
+    install_git_prompt
     go_back_home
 }
 
