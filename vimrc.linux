@@ -32,7 +32,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive.git'
 
 " Golang support
-Plugin 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+" Plugin 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
 " Neocomplete
 " Plugin 'Shougo/neocomplete.vim'
@@ -126,6 +126,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+Plugin 'davidhalter/jedi-vim'
+
+Plugin 'python-mode/python-mode'
+
 call vundle#end()
 filetype indent plugin on
 
@@ -183,3 +187,4 @@ set hlsearch incsearch smartcase ignorecase          " Search enhancement, case 
 
 autocmd FileType go,c,java,sh set ts=4 sw=4 sts=4 et
 autocmd BufNewFile,BufRead *.json set filetype=javascript
+autocmd FileType python setlocal completeopt-=preview

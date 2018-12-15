@@ -106,7 +106,7 @@ function check_env() {
     else
         mkdir -p ${BUNDLE_DIR}
     fi
-    # Backup old .vimrc 
+    # Backup old .vimrc
     if [ -f ${HOME}/.vimrc ]; then
         mv ${HOME}/.vimrc ${HOME}/.vimrc_backup_$(date +%Y%m%d)
     fi
@@ -150,7 +150,7 @@ function install_ycm {
 function install_git_prompt {
 
     if [ ! -f $HOME/.git-prompt.sh ]; then
-        cp ./git-prompt.sh $HOME/.git-prompt.sh
+        /bin/cp $PWD/git-prompt.sh $HOME/.git-prompt.sh
         echo -e "\n" >> $HOME/.bashrc
         tail -n 1 ./bashrc >> $HOME/.bashrc
         echo -e "source ~/.git-prompt.sh" >> $HOME/.bashrc
