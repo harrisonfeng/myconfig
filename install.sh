@@ -53,6 +53,7 @@ TXTBLUE='\e[0;34m'
 TXTPURPLE='\e[0;35m'
 
 ## Must have directories
+PROJECT_DIR=$PWD
 VIM_HOME_DIR=${HOME}/.vim
 BUNDLE_DIR=${VIM_HOME_DIR}/bundle
 VUNDLE_VIM_DIR=${BUNDLE_DIR}/Vundle.vim
@@ -73,6 +74,11 @@ function command_exists() {
 
 function go_back_home() {
     cd ${HOME}
+}
+
+
+function go_project() {
+    cd ${PROJECT_DIR}
 }
 
 
@@ -148,7 +154,6 @@ function install_ycm {
 
 
 function install_git_prompt {
-
     if [ ! -f $HOME/.git-prompt.sh ]; then
         /bin/cp $PWD/git-prompt.sh $HOME/.git-prompt.sh
         echo -e "\n" >> $HOME/.bashrc
@@ -164,6 +169,7 @@ function main() {
     install_dependencies
     install_update_plugins
     install_ycm
+    go_project
     install_git_prompt
     go_back_home
 }
