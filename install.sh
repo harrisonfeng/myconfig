@@ -62,9 +62,12 @@ VUNDLE_VIM_DIR=${BUNDLE_DIR}/Vundle.vim
 OS_TYPE=$(uname -o)
 VIMRC=vimrc.linux
 OS_CYGWIN=Cygwin
+GO_VERSION=1.12.5
+GO_PKG=go${GO_VERSION}.linux-amd64.tar.gz
 
 ## URLs
 VUNDLE_VIM_GIT_URL=https://github.com/VundleVim/Vundle.vim
+GO_PKG_URL=https://dl.google.com/go/${GO_PKG}
 
 
 function command_exists() {
@@ -82,11 +85,20 @@ function go_project() {
 }
 
 
+function install_go() {
+    if ! command_exists go; then
+        wget ${GO_PKG_URL}
+        tar -C /usr/local -vxzf ${GO_PKG}
+        echo -e "export PATH=\$PATH:/usr/local/go/bin" >> ${HOME}/.bashrc
+    fi
+}
+
+
 function install_dependencies() {
     # For CentOS
     if command_exists yum; then
         yum groupinstall -y "Development Tools"
-        yum install -y kernel-devel cmake python-devel tmux ctags
+        yum install -y kernel-devel cmake python-devel tmux ctags wget
     # For Ubuntu
     elif command_exists apt; then
         sudo apt-get install -y build-essential cmake python-dev tmux exuberant-ctags
@@ -148,6 +160,7 @@ function install_ycm {
         cd ${BUNDLE_DIR}/YouCompleteMe
         git submodule update --init --recursive
         ./install.py --clang-completer
+        install_go
         ./install.py --gocode-completer
     fi
 }
